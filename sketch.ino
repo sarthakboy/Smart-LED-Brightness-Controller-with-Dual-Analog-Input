@@ -34,15 +34,17 @@ void BrightnessLED(int reading) {
     // Convert ADC value (0-1023) to PWM value (0-255)
     int pwmValue = (reading * 255L) / 1023;
     int brightnessPercent = (pwmValue*100L)/255;
-    analogWrite(LED, pwmValue);
+    
 
     lcd.setCursor(0, 0);
 
     if (button_state) {
         lcd.print("MODE: A0       ");
+        analogWrite(LED, 255-pwmValue);
     }
     else {
         lcd.print("MODE: A1       ");
+        analogWrite(LED, pwmValue);
     }
 
     lcd.setCursor(0, 1);
