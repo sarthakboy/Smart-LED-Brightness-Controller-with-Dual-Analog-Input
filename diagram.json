@@ -1,0 +1,197 @@
+{
+  "version": 1,
+  "author": "Velxio",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-ntc-temperature-sensor",
+      "id": "ntc_temperature_sensor_1789473099885_7ca0nh27c",
+      "top": 94,
+      "left": -202,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_1789473243006_zvzvx3ri3",
+      "top": -199,
+      "left": -170,
+      "attrs": {
+        "value": false,
+        "brightness": 1,
+        "color": "red",
+        "lightColor": null,
+        "label": "",
+        "flip": false
+      }
+    },
+    {
+      "type": "wokwi-resistor-220",
+      "id": "resistor_220_1789473261917_1xzori30q",
+      "top": -140,
+      "left": -143,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-lcd1602-i2c",
+      "id": "lcd1602_i2c_1789473321204_5khku151q",
+      "top": -215,
+      "left": 15,
+      "attrs": {
+        "i2cAddress": "0x27",
+        "pins": "i2c",
+        "background": "green",
+        "color": "black",
+        "backlight": true
+      }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "potentiometer_1789626679750_xsttug646",
+      "top": 176,
+      "left": 316,
+      "attrs": {
+        "min": 0,
+        "max": 1023,
+        "value": 709,
+        "step": 1,
+        "startDegree": -135,
+        "endDegree": 135
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "pushbutton_1789626819407_7b2151v1z",
+      "top": 19,
+      "left": 397,
+      "attrs": {
+        "color": "red",
+        "pressed": false,
+        "label": "",
+        "xray": false
+      }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzzer_1789626996988_mcsp2r3zs",
+      "top": 11,
+      "left": 295,
+      "attrs": {
+        "hasSignal": false
+      }
+    }
+  ],
+  "connections": [
+    [
+      "ntc_temperature_sensor_1789473099885_7ca0nh27c:GND",
+      "uno:GND.3",
+      "black",
+      []
+    ],
+    [
+      "ntc_temperature_sensor_1789473099885_7ca0nh27c:VCC",
+      "uno:5V",
+      "#cc0000",
+      []
+    ],
+    [
+      "ntc_temperature_sensor_1789473099885_7ca0nh27c:OUT",
+      "uno:A0",
+      "#22c55e",
+      []
+    ],
+    [
+      "led_1789473243006_zvzvx3ri3:A",
+      "resistor_220_1789473261917_1xzori30q:1",
+      "#22c55e",
+      []
+    ],
+    [
+      "led_1789473243006_zvzvx3ri3:C",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "lcd1602_i2c_1789473321204_5khku151q:GND",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "lcd1602_i2c_1789473321204_5khku151q:VCC",
+      "uno:5V",
+      "#cc0000",
+      []
+    ],
+    [
+      "resistor_220_1789473261917_1xzori30q:2",
+      "uno:11",
+      "#22c55e",
+      []
+    ],
+    [
+      "potentiometer_1789626679750_xsttug646:GND",
+      "uno:GND.3",
+      "black",
+      []
+    ],
+    [
+      "potentiometer_1789626679750_xsttug646:VCC",
+      "uno:5V",
+      "#cc0000",
+      []
+    ],
+    [
+      "potentiometer_1789626679750_xsttug646:SIG",
+      "uno:A1",
+      "#22c55e",
+      []
+    ],
+    [
+      "buzzer_1789626996988_mcsp2r3zs:2",
+      "uno:GND.2",
+      "black",
+      []
+    ],
+    [
+      "buzzer_1789626996988_mcsp2r3zs:1",
+      "uno:3",
+      "#22c55e",
+      []
+    ],
+    [
+      "uno:2",
+      "pushbutton_1789626819407_7b2151v1z:2.l",
+      "#22c55e",
+      []
+    ],
+    [
+      "lcd1602_i2c_1789473321204_5khku151q:SCL",
+      "uno:A5",
+      "#22c55e",
+      []
+    ],
+    [
+      "lcd1602_i2c_1789473321204_5khku151q:SDA",
+      "uno:A4",
+      "#22c55e",
+      []
+    ],
+    [
+      "pushbutton_1789626819407_7b2151v1z:1.r",
+      "uno:GND.3",
+      "black",
+      []
+    ]
+  ]
+}
